@@ -1,0 +1,47 @@
+
+body {
+        position: relative;
+      }
+
+      table,
+      th,
+      td {
+        border: 2px solid #333; /* Darker border */
+        margin: 0%;
+        padding: 10px;
+        border-collapse: collapse; /* Ensure clean table borders */
+        border: 1px solid black;
+      }
+
+      button {
+        height: 30px;
+        width: 500px;
+      }
+
+      input[type="number"] {
+        width: 80px; /* Decreased input box width */
+        padding: 2px; /* Reduced padding */
+        font-size: 14px; /* Text size inside input */
+      }
+
+      /* Styles for mobile devices only */
+      @media only screen and (max-width: 600px) {
+        table,
+        th,
+        td {
+          font-size: 12px; /* Smaller font size for table text */
+          border: 1px solid black;
+        }
+
+        input[type="number"] {
+          font-size: 14px; /* Text size inside input */
+          padding: 5px; /* Space inside input fields */
+          width: 100%; /* Input fields take up full width */
+          box-sizing: border-box; /* Padding does not affect total width */
+        }
+
+        button {
+          width: 100%; /* Button takes up full width */
+          height: 40px; /* Slightly larger for touch accessibility */
+        }
+      }

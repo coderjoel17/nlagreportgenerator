@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>nlag calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <center>
+      <table style="text-align: center; border: 1px solid black;">
+        <caption>
+          NLAG REPORT
+          <p id="dat"></p>
+        </caption>
+        <tr style="background-color: burlywood; border: 1px solid black;">
+          <th style="border: 1px solid black;">S.No</th>
+          <th style="border: 1px solid black;">Place</th>
+          <th style="border: 1px solid black;">Wing</th>
+          <th style="border: 1px solid black;">Date</th>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">1</td>
+          <td style="border: 1px solid black;">Main Hall</td>
+          <td style="border: 1px solid black;">A1</td>
+          <td style="border: 1px solid black;"><input type="number" id="A1" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">2</td>
+          <td style="border: 1px solid black;">Main Hall</td>
+          <td style="border: 1px solid black;">A2</td>
+          <td style="border: 1px solid black;"><input type="number" id="A2" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">3</td>
+          <td style="border: 1px solid black;">Main Hall</td>
+          <td style="border: 1px solid black;">B</td>
+          <td style="border: 1px solid black;"><input type="number" id="B" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">4</td>
+          <td style="border: 1px solid black;">Main Hall</td>
+          <td style="border: 1px solid black;">C1</td>
+          <td style="border: 1px solid black;"><input type="number" id="C1" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">5</td>
+          <td style="border: 1px solid black;">Main Hall</td>
+          <td style="border: 1px solid black;">C2</td>
+          <td style="border: 1px solid black;"><input type="number" id="C2" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">6</td>
+          <td style="border: 1px solid black;">Balcony</td>
+          <td style="border: 1px solid black;">D</td>
+          <td style="border: 1px solid black;"><input type="number" id="D" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td style="border: 1px solid black;">7</td>
+          <td style="border: 1px solid black;">Balcony</td>
+          <td style="border: 1px solid black;">E</td>
+          <td style="border: 1px solid black;"><input type="number" id="E" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total No.of Believers</td>
+          <td><p id="nob"></p></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total No.of Vol & Lde present</td>
+          <td><input type="number" id="V" placeholder="Enter...." /></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Overall Total</td>
+          <td><p id="ot"></p></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black; ">Total No of Main Hall</td>
+          <td><p id="mh"></p></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total No of Balcony</td>
+          <td><p id="fv"></p></td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total Nos of Volunteers/Pre/Abs</td>
+          <td>
+            <p>
+              <input type="number" id="TV1" placeholder="Enter.." /> /
+              <input type="number" id="vol" placeholder="Enter.." />
+              /
+              <span id="vab"></span>
+            </p>
+          </td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total Nos of WL & SL /Pre/Abs</td>
+          <td>
+            <p>
+              <input type="number" id="TV2" placeholder="Enter.." /> /
+              <input type="number" id="ls" placeholder="Enter.." /> /
+              <span id="lsab"></span>
+            </p>
+          </td>
+        </tr>
+        <tr style="border: 1px solid black;">
+          <td colspan="3" style="border: 1px solid black;">Total Nos of LDE & Vol/Pre/Abs</td>
+          <td>
+            <p>
+              <span id="TV12"></span> / <span id="tav"></span> /
+              <span id="tlav"></span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4"><button onclick="fill()">fill</button></td>
+        </tr>
+      </table>
+    </center>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NLAG Report Generator</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    :root{
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6c757d;
+      --accent:#0d6efd;
+      --input-bg: #fbfdff;
+      --input-border: #e6eef8;
+      --btn-radius: 10px;
+    }
+
+    /* page layout */
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 20px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* container card */
+    .container.py-4 {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(20,30,60,0.06);
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #222;
+    }
+
+    label.form-label {
+      font-weight: 600;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    /* form controls */
+    input.form-control,
+    select.form-select,
+    textarea.form-control {
+      border-radius: 8px;
+      border: 1px solid var(--input-border);
+      background: var(--input-bg);
+      padding: 10px 12px;
+      transition: box-shadow 160ms ease, border-color 160ms ease, transform 120ms ease;
+      font-size: 0.95rem;
+    }
+
+    /* improved input focus + placeholder */
+    input.form-control::placeholder,
+    textarea.form-control::placeholder {
+      color: #9aa6b2;
+    }
+
+    input.form-control:focus,
+    select.form-select:focus,
+    textarea.form-control:focus {
+      box-shadow: 0 6px 18px rgba(13,110,253,0.08);
+      border-color: var(--accent);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    /* remove number input spinner on Windows/Chrome (optional) */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    /* buttons */
+    .btn {
+      border-radius: var(--btn-radius);
+      padding: 8px 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+      box-shadow: 0 4px 10px rgba(15,23,42,0.04);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:active { transform: translateY(1px) scale(0.998); }
+    .btn:focus {
+      outline: none;
+      box-shadow: 0 8px 20px rgba(13,110,253,0.12);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background-color: #0b5ed7; border-color: #0b5ed7; }
+
+    .btn-success {
+      background-color: #198754;
+      border-color: #198754;
+      color: #fff;
+    }
+    .btn-success:hover { background-color: #157347; border-color: #157347; }
+
+    .btn-outline-secondary {
+      background: transparent;
+      border: 1px solid #ced4da;
+      color: #495057;
+    }
+    .btn-outline-secondary:hover {
+      background: rgba(0,0,0,0.03);
+      border-color: #bfc9d6;
+    }
+
+    .btn-outline-danger {
+      background: transparent;
+      border: 1px solid #f5c2c7;
+      color: #b02a37;
+    }
+    .btn-outline-danger:hover {
+      background: rgba(176,42,55,0.06);
+    }
+
+    .btn:disabled,
+    .btn[disabled] {
+      opacity: 0.6;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* report textareas use monospace and preserve whitespace */
+    #headArea,
+    #absArea {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+      font-size: 0.95rem;
+      background: #fbfcfe;
+      color: #0b1726;
+      white-space: pre-wrap;
+      word-break: break-word;
+      border: 1px solid #eef4fb;
+      padding: 12px;
+      resize: vertical;
+    }
+
+    #headArea { min-height: 150px; }
+    #absArea  { min-height: 240px; }
+
+    /* copy buttons */
+    .btn-outline-secondary {
+      min-width: 150px;
+    }
+    .col-lg-6 .mt-2 { display:flex; gap:8px; align-items:center; }
+
+    .small-muted {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 576px) {
+      .container.py-4 { padding: 18px; border-radius: 8px; }
+      .btn-outline-secondary { width: 100%; }
+      #headArea, #absArea { min-height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h2 class="mb-4">NLAG Report Generator</h2>
+
+    
+
+    <hr class="my-3">
+
+    <h5 class="mt-3">Absentees</h5>
+    <div class="row g-2 align-items-center">
+      <div class="col-auto">
+        <label for="wing" class="form-label">Wing</label>
+        <br><br>
+        <select id="wing" class="form-select">
+          <option value="A1 wing">A1 wing</option>
+          <option value="A2 wing">A2 wing</option>
+          <option value="B wing">B wing</option>
+          <option value="C1 wing">C1 wing</option>
+          <option value="C2 wing">C2 wing</option>
+          <option value="D wing">D wing</option>
+          <option value="E wing">E wing</option>
+        </select>
+      </div>
+      <br>
+
+      <div class="col">
+        <label for="nameInput" class="form-label">Name</label><br><br>
+        <!-- added list attribute and datalist below -->
+        <input type="text" id="nameInput" class="form-control" placeholder="Enter name" list="nameList" autocomplete="off" />
+        <datalist id="nameList"></datalist>
+      </div>
+      <br>
+      <br>
+
+      <div class="col-auto d-flex gap-2">
+        <button class="btn btn-primary mt-3" onclick="addAbsentee()">Add Absentee</button>
+      </div>
+      <br>
+      <br>
+      <div class="col-auto d-flex gap-2">
+        <button class="btn btn-outline-danger mt-3" onclick="clearAbsentees()">Clear All</button>
+      </div>
+    </div>
+    <br>
+
+    <div class="mt-4">
+      <button class="btn btn-success" onclick="generateReport()">Generate Report</button>
+    </div>
+
+    <!-- Split report into two sections with copy buttons -->
+    <div class="row mt-4">
+      <div class="col-lg-6 mb-3">
+        <h4>Head Count</h4>
+        <textarea id="headArea" readonly class="form-control" rows="8"></textarea>
+        <div class="mt-2 d-flex gap-2">
+          <button id="copyHeadBtn" class="btn btn-outline-secondary" onclick="copyHeadCount()">Copy Head Count</button>
+          <button id="editHeadBtn" class="btn btn-primary" onclick="toggleEditHead()">Edit</button>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-3">
+        <h4>Absentees</h4>
+        <textarea id="absArea" readonly class="form-control" rows="12"></textarea>
+        <div class="mt-2 d-flex gap-2">
+          <button id="copyAbsBtn" class="btn btn-outline-secondary" onclick="copyAbsentees()">Copy Absentees</button>
+          <button id="editAbsBtn" class="btn btn-primary" onclick="toggleEditAbs()">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------------- Name Autocomplete + Persistence ----------------
+    // default names you provided (stored uppercase for consistency)
+    const DEFAULT_NAMES = [
+      "HARI","PANDIYARASI","CHITRA","PREM","VINOK","BHASKAR","JEEVITHA","BENEDICT",
+      "ELIZABETH","MALAR","POONKODI","MANJU","PRASANA","SELVI","AMUTHA","ESTHER A",
+      "SANGEETHA","JENNIFER","JAMUNA","DANIAL","RUTHSELVI","AMUL","CHINNA PONNU",
+      "DIVYA","VEDHA","RADHIKA","REBECCA","ESTHER S","BABU","JAMES",
+      "PARTHASARATHI","JOEL","SASILEO","PRAKASH"
+    ];
+
+    const NAME_KEY = "savedNames"; // localStorage key
+
+    function initializeNames() {
+      const stored = JSON.parse(localStorage.getItem(NAME_KEY));
+      if (!stored || !Array.isArray(stored) || stored.length === 0) {
+        localStorage.setItem(NAME_KEY, JSON.stringify(DEFAULT_NAMES.slice()));
+      }
+    }
+
+    function loadNames() {
+      const names = JSON.parse(localStorage.getItem(NAME_KEY)) || [];
+      names.sort((a,b) => a.localeCompare(b)); // alphabetical
+      const datalist = document.getElementById("nameList");
+      datalist.innerHTML = "";
+      names.forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        datalist.appendChild(option);
+      });
+    }
+
+    // Save a name in uppercase, avoid case-insensitive duplicates
+    function saveName(rawName) {
+      if (!rawName) return;
+      const name = rawName.trim().toUpperCase();
+      if (!name) return;
+
+      let names = JSON.parse(localStorage.getItem(NAME_KEY)) || [];
+      // case-insensitive check (we store as uppercase so simple check)
+      const exists = names.some(n => n.toUpperCase() === name);
+      if (!exists) {
+        names.push(name);
+        localStorage.setItem(NAME_KEY, JSON.stringify(names));
+      }
+    }
+
+    // optional: keep input uppercase while typing (good UX for case-insensitive system)
+    document.addEventListener("input", function(e) {
+      if (e.target && e.target.id === "nameInput") {
+        const start = e.target.selectionStart;
+        const end = e.target.selectionEnd;
+        e.target.value = e.target.value.toUpperCase();
+        // try to preserve caret
+        e.target.selectionStart = start;
+        e.target.selectionEnd = end;
+      }
+    });
+
+    // populate names on focus too (so suggestions show)
+    document.addEventListener("focusin", function(e) {
+      if (e.target && e.target.id === "nameInput") loadNames();
+    });
+
+    // ---------------- IndexedDB Setup ----------------
+    let db;
+    const request = indexedDB.open("NLAG_DB", 1);
+    request.onupgradeneeded = function(event) {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains("absentees")) {
+        db.createObjectStore("absentees", { keyPath: "id", autoIncrement: true });
+      }
+    };
+    request.onsuccess = function(event) { db = event.target.result; generateReport(); };
+    request.onerror = function() { alert("Error opening IndexedDB"); };
+
+    // ---------------- Date helper ----------------
+    function ordinal(n) {
+      const k = n % 100;
+      if (k >= 11 && k <= 13) return n + 'th';
+      switch (n % 10) {
+        case 1: return n + 'st';
+        case 2: return n + 'nd';
+        case 3: return n + 'rd';
+        default: return n + 'th';
+      }
+    }
+    function todayDateStr() {
+      const now = new Date();
+      const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      return `${ordinal(now.getDate())} - ${monthNames[now.getMonth()]}`;
+    }
+
+    // ---------------- Add Absentee ----------------
+    function addAbsentee() {
+      const wing = document.getElementById("wing").value;
+      const rawName = document.getElementById("nameInput").value.trim();
+      if (!rawName) return alert("Enter a name!");
+
+      const name = rawName.toUpperCase(); // normalize to uppercase
+      // save to the names list (case-insensitive)
+      saveName(name);
+
+      const tx = db.transaction("absentees", "readwrite");
+      const store = tx.objectStore("absentees");
+      store.add({ wing: wing, name: name });
+      tx.oncomplete = () => {
+        alert("Absentee added!");
+        document.getElementById("nameInput").value = "";
+        loadNames(); // refresh datalist
+        generateReport();
+      };
+      tx.onerror = () => { alert("Failed to add absentee"); };
+    }
+
+    // ---------------- Clear Absentees ----------------
+    function clearAbsentees() {
+      const tx = db.transaction("absentees", "readwrite");
+      const store = tx.objectStore("absentees");
+      store.clear();
+      tx.oncomplete = () => { alert("All absentees cleared!"); generateReport(); };
+      tx.onerror = () => { alert("Failed to clear"); };
+    }
+
+    // ---------------- Copy helpers ----------------
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); alert('Copied'); } catch (e) { alert('Copy failed'); }
+      ta.remove();
+    }
+    function copyText(text) {
+      if (!text) return alert('Nothing to copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => alert('Copied'), () => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+    function copyHeadCount() {
+      const txt = document.getElementById('headArea').value;
+      copyText(txt);
+    }
+    function copyAbsentees() {
+      const txt = document.getElementById('absArea').value;
+      copyText(txt);
+    }
+
+    // ---------------- Generate Report ----------------
+    function generateReport(preMainHall, preBalcony) {
+  const dateStr = todayDateStr();
+
+  // ✅ use passed values OR fallback to localStorage
+  let mainHall = 0;
+  let balcony = 0;
+
+  if (preMainHall !== undefined) {
+    mainHall = parseInt(preMainHall) || 0;
+  } else {
+    mainHall = parseInt(localStorage.getItem('NLAG_mainHall')) || 0;
+  }
+
+  if (preBalcony !== undefined) {
+    balcony = parseInt(preBalcony) || 0;
+  } else {
+    balcony = parseInt(localStorage.getItem('NLAG_balcony')) || 0;
+  }
+
+  const total = mainHall + balcony;
+
+  // Fetch absentees
+  const tx = db.transaction("absentees", "readonly");
+  const store = tx.objectStore("absentees");
+  const request = store.getAll();
+
+  request.onsuccess = function() {
+    const data = request.result || [];
+
+    let grouped = {
+      "A1 wing": [], "A2 wing": [], "B wing": [],
+      "C1 wing": [], "C2 wing": [], "D wing": [], "E wing": []
+    };
+
+    data.forEach(item => {
+      if (grouped[item.wing]) grouped[item.wing].push(item.name);
+    });
+
+    let totalAbs = data.length;
+
+    const headText = [
+      `*NLAG: TAMIL SERVICES ${dateStr} - 12.30pm*`,
+      "*FIFTH SERVICE: HEAD COUNT*",
+      "\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"",
+      `*MAIN HALL* - ${mainHall}`,
+      `*Balcony*      - ${balcony}`,
+      "-------------------------------------------",
+      `        *TOTAL*  - ${total}`,
+      "-------------------------------------------"
+    ].join("\n");
+
+    const sectionFor = (list) => {
+      if (!list || list.length === 0) return "* Nil";
+      return list.map(n => `* ${n}`).join("\n");
+    };
+
+    const absText = [
+      "*5th service*",
+      `*Absentees - ${dateStr} - ${totalAbs}*`,
+      "",
+      "A1 wing",
+      sectionFor(grouped["A1 wing"]),
+      "",
+      "A2 wing",
+      sectionFor(grouped["A2 wing"]),
+      "",
+      "B wing",
+      sectionFor(grouped["B wing"]),
+      "",
+      "C1 wing",
+      sectionFor(grouped["C1 wing"]),
+      "",
+      "C2 wing",
+      sectionFor(grouped["C2 wing"]),
+      "",
+      "D wing",
+      sectionFor(grouped["D wing"]),
+      "",
+      "E wing",
+      sectionFor(grouped["E wing"]),
+      "",
+      `*Total absentees - ${totalAbs}`
+    ].join("\n");
+
+    if (!isEditingHead) document.getElementById("headArea").value = headText;
+    if (!isEditingAbs) document.getElementById("absArea").value = absText;
+  };
+}
+
+    // editing flags to avoid overwriting user edits while editing
+    let isEditingHead = false;
+    let isEditingAbs = false;
+
+    function setEditingState(areaId, btnId, editing) {
+      const area = document.getElementById(areaId);
+      const btn = document.getElementById(btnId);
+      area.readOnly = !editing ? true : false;
+      area.classList.toggle('border-primary', editing);
+      if (editing) {
+        btn.textContent = 'Save';
+        area.focus();
+        // move caret to end
+        area.selectionStart = area.selectionEnd = area.value.length;
+      } else {
+        btn.textContent = 'Edit';
+      }
+    }
+
+    function toggleEditHead() {
+      isEditingHead = !isEditingHead;
+      setEditingState('headArea', 'editHeadBtn', isEditingHead);
+      // when saving, trim whitespace and re-enable copy
+      if (!isEditingHead) {
+        document.getElementById('headArea').value = document.getElementById('headArea').value.trim();
+        alert('Head count saved');
+      }
+    }
+
+    function toggleEditAbs() {
+      isEditingAbs = !isEditingAbs;
+      setEditingState('absArea', 'editAbsBtn', isEditingAbs);
+      if (!isEditingAbs) {
+        document.getElementById('absArea').value = document.getElementById('absArea').value.trim();
+        alert('Absentees saved');
+      }
+    }
+
+    // initialize names and datalist after DOM ready
+    document.addEventListener("DOMContentLoaded", () => {
+      initializeNames();
+      loadNames();
+    });
+
+    
+  </script>
+
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
