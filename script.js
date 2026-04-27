@@ -11,7 +11,7 @@ function fill() {
   const d = Number(document.getElementById("D").value) || 0;
   const e = Number(document.getElementById("E").value) || 0;
 
-  const V1 = Number(document.getElementById("V").value) || 0;
+  const V1 = Number(document.getElementById("V").textContent) || 0;
 
   const vol1 = Number(document.getElementById("vol").value) || 0;
   const ls1 = Number(document.getElementById("ls").value) || 0;
@@ -54,6 +54,14 @@ localStorage.setItem('NLAG_balcony', totalBalcony);
 generateReport(totalMainHall, totalBalcony);
 }
 
+function calculateVolAndLdePresent() {
+  const vol = Number(document.getElementById("vol").value) || 0;
+  const ls = Number(document.getElementById("ls").value) || 0;
+
+  document.getElementById("V").textContent = vol + ls;
+}
+
+
 // date formatting and suffix
 function getFormattedDate() {
   const date = new Date();
@@ -84,25 +92,31 @@ function getFormattedDate() {
 }
 
 // set date on load
-document.getElementById("dat").textContent = getFormattedDate();
+
 
 
 
 // paste into script.js or a <script> before </body>
 document.addEventListener('DOMContentLoaded', () => {
-  // set defaults only if not already stored
   if (localStorage.getItem('TV1') === null) localStorage.setItem('TV1', '26');
-  if (localStorage.getItem('TV2') === null) localStorage.setItem('TV2', '9'); // '9' (09 will become 9 for number input)
+  if (localStorage.getItem('TV2') === null) localStorage.setItem('TV2', '9');
 
   const tv1 = document.getElementById('TV1');
   const tv2 = document.getElementById('TV2');
+  const volInput = document.getElementById("vol");
+  const lsInput = document.getElementById("ls");
 
-  // populate inputs from localStorage
   if (tv1) tv1.value = localStorage.getItem('TV1');
   if (tv2) tv2.value = localStorage.getItem('TV2');
 
-  // save on change
   if (tv1) tv1.addEventListener('input', e => localStorage.setItem('TV1', e.target.value));
   if (tv2) tv2.addEventListener('input', e => localStorage.setItem('TV2', e.target.value));
+
+  if (volInput) volInput.addEventListener("input", calculateVolAndLdePresent);
+  if (lsInput) lsInput.addEventListener("input", calculateVolAndLdePresent);
+
+  calculateVolAndLdePresent();
+
+  document.getElementById("dat").textContent = getFormattedDate();
 });
 
