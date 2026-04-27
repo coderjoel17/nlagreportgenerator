@@ -52,6 +52,7 @@ localStorage.setItem('NLAG_balcony', totalBalcony);
 
 // auto generate report
 generateReport(totalMainHall, totalBalcony);
+markSaved();
 }
 
 function calculateVolAndLdePresent() {
@@ -120,3 +121,25 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById("dat").textContent = getFormattedDate();
 });
 
+// Prevent accidental refresh / tab close
+let formChanged = false;
+
+// mark page as changed when user types in any input
+document.addEventListener("input", function (e) {
+  if (e.target.matches("input")) {
+    formChanged = true;
+  }
+});
+
+// when user clicks fill, assume data is intentionally saved/generated
+function markSaved() {
+  formChanged = false;
+}
+
+// browser warning on refresh / close
+window.addEventListener("beforeunload", function (e) {
+  if (formChanged) {
+    e.preventDefault();
+    e.returnValue = "";
+  }
+});
